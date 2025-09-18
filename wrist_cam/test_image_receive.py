@@ -2,7 +2,7 @@ import serial
 import time
 import os
 
-SERIAL_PORT = 'COM10'   # change to your COM port
+SERIAL_PORT = '/dev/ttyUSB0'   # change to your COM port
 BAUD_RATE = 921600
 SAVE_DIR = "esp32_images"
 CHUNK_SIZE = 4096       # 4 KB per read
