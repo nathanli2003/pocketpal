@@ -1,9 +1,11 @@
 from inference_sdk import InferenceHTTPClient
 import json
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 CLIENT = InferenceHTTPClient(
     api_url="https://serverless.roboflow.com",
-    api_key="p4h8F5NBZiDPVoFaH0XZ"
+    api_key=os.getenv("API_KEY")
 )
 
 # Replace this with your actual image path
