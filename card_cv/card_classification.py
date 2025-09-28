@@ -8,11 +8,11 @@ from PIL import Image, ImageDraw, ImageFont
 # --- Configuration ---
 load_dotenv()
 API_KEY = os.getenv("API_KEY") # Still needed to download the model the first time
-PROJECT_ID = "poker-cards-cxcvz"
-MODEL_VERSION = 1
+PROJECT_ID = "playing-cards-ow27d"
+MODEL_VERSION = 4
 
 # --- Image Source ---
-IMAGE_PATH = "iphoneimage.jpg"
+IMAGE_PATH = "card_images/x1523y2255.png"
 ANNOTATED_IMAGE_PATH = "card_identification.jpg"
 
 # --- Main Script ---

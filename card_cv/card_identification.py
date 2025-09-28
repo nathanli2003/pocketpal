@@ -57,7 +57,7 @@ def non_max_suppression(boxes: np.ndarray, scores: np.ndarray, iou_threshold: fl
     return np.array(keep)
 
 
-def detect_and_crop_cards_manual_nms(
+def NMS(
     image_path: str,
     output_dir: str = "cropped_cards_manual",
     confidence_threshold: float = 0.20,
@@ -110,13 +110,30 @@ def detect_and_crop_cards_manual_nms(
         os.makedirs(output_dir, exist_ok=True)
         original_image = Image.open(image_path).convert("RGB")
 
+        # --- MODIFICATION START ---
+        # Get original image dimensions and define the padding
+        img_width, img_height = original_image.size
+        padding = 50
+
         for box in filtered_boxes:
             x1, y1, x2, y2 = box
-            cropped_image = original_image.crop((x1, y1, x2, y2))
-            filename = f"x{int(x1)}y{int(y1)}.jpg"
+
+            # Apply padding to the bounding box coordinates
+            # Use max/min to ensure the new coordinates do not go outside the image bounds
+            padded_x1 = max(0, x1 - padding)
+            padded_y1 = max(0, y1 - padding)
+            padded_x2 = min(img_width, x2 + padding)
+            padded_y2 = min(img_height, y2 + padding)
+
+            # Crop the image using the new, padded coordinates
+            cropped_image = original_image.crop((padded_x1, padded_y1, padded_x2, padded_y2))
+            
+            # Filename is based on original coordinates for reference
+            filename = f"x{int(x1)}y{int(y1)}.png"
             output_path = os.path.join(output_dir, filename)
             cropped_image.save(output_path)
             print(f"  -> Saved {output_path}")
+        # --- MODIFICATION END ---
 
         print("\nProcessing complete.")
 
@@ -130,9 +147,9 @@ if __name__ == "__main__":
     IMAGE_SOURCE_PATH = "iphoneimage.jpg"
     OUTPUT_FOLDER = "card_images"
     
-    detect_and_crop_cards_manual_nms(
+    NMS(
         image_path=IMAGE_SOURCE_PATH,
         output_dir=OUTPUT_FOLDER,
-        confidence_threshold=0.20,
-        overlap_threshold=0.5
+        confidence_threshold=0.10,
+        overlap_threshold=0.9
     )
