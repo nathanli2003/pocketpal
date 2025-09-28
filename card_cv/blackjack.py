@@ -12,8 +12,8 @@ PROJECT_ID = "playing-cards-ow27d"
 MODEL_VERSION = 4
 
 # --- Image Source ---
-IMAGE_PATH = "/home/poker/Downloads/1200px-AcetoFive.jpeg"
-ANNOTATED_IMAGE_PATH = "annotated_image_local.jpg"
+IMAGE_PATH = "/home/poker/Documents/pocketpal/card_cv/9D.png"
+ANNOTATED_IMAGE_PATH = "poker_cropped_2.jpg"
 
 # --- Main Script ---
 try:
