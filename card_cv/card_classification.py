@@ -12,7 +12,7 @@ PROJECT_ID = "playing-cards-ow27d"
 MODEL_VERSION = 4
 
 # --- Image Source ---
-IMAGE_PATH = "card_images/x1523y2255.png"
+IMAGE_PATH = "card_images/x1936y2257.png"
 ANNOTATED_IMAGE_PATH = "card_identification.jpg"
 
 # --- Main Script ---
