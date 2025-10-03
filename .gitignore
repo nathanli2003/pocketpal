@@ -1,3 +1,11 @@
+# Datasets
+*/dataset/
+*/meta_images/
+*/card_images/
+*/card_images_archive/
+*/esp32_images/
+*/test_images/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

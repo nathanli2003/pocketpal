@@ -12,8 +12,8 @@ PROJECT_ID = "playing-cards-ow27d"
 MODEL_VERSION = 4
 
 # --- Image Source ---
-IMAGE_PATH = "/home/poker/Downloads/1200px-AcetoFive.jpeg"
-ANNOTATED_IMAGE_PATH = "annotated_image_local.jpg"
+IMAGE_PATH = "meta_images/Screenshot from 2025-10-03 15-16-19.png"
+ANNOTATED_IMAGE_PATH = "annotated_image_meta.jpg"
 
 # --- Main Script ---
 try:

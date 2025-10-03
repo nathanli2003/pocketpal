@@ -144,7 +144,7 @@ def NMS(
 
 # --- Main Execution ---
 if __name__ == "__main__":
-    IMAGE_SOURCE_PATH = "iphoneimage.jpg"
+    IMAGE_SOURCE_PATH = "meta_images/od_photo-2191_singular_display_fullPicture.jpg"
     OUTPUT_FOLDER = "card_images"
     
     NMS(
